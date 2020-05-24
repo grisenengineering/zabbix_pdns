@@ -1,0 +1,1702 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<zabbix_export>
+    <version>4.4</version>
+    <date>2020-05-24T12:27:39Z</date>
+    <groups>
+        <group>
+            <name>Templates/Applications</name>
+        </group>
+    </groups>
+    <templates>
+        <template>
+            <template>Template App PowerDNS</template>
+            <name>Template App PowerDNS</name>
+            <groups>
+                <group>
+                    <name>Templates/Applications</name>
+                </group>
+            </groups>
+            <applications>
+                <application>
+                    <name>PowerDNS</name>
+                </application>
+                <application>
+                    <name>Zabbix raw items</name>
+                </application>
+            </applications>
+            <items>
+                <item>
+                    <name>PowerDNS: Recieved corrupt packets</name>
+                    <type>DEPENDENT</type>
+                    <key>pdns.corrupt-packets</key>
+                    <delay>0</delay>
+                    <value_type>FLOAT</value_type>
+                    <description>Number of corrupt packets received per second</description>
+                    <applications>
+                        <application>
+                            <name>PowerDNS</name>
+                        </application>
+                    </applications>
+                    <preprocessing>
+                        <step>
+                            <type>REGEX</type>
+                            <params>corrupt-packets=([0-9]*)
+\1</params>
+                        </step>
+                        <step>
+                            <type>CHANGE_PER_SECOND</type>
+                            <params/>
+                        </step>
+                    </preprocessing>
+                    <master_item>
+                        <key>pdns.get.stats</key>
+                    </master_item>
+                </item>
+                <item>
+                    <name>PowerDNS: Deferred cache inserts</name>
+                    <type>DEPENDENT</type>
+                    <key>pdns.deferred-cache-inserts</key>
+                    <delay>0</delay>
+                    <value_type>FLOAT</value_type>
+                    <description>Number of cache inserts that were deferred because of maintenance per second</description>
+                    <applications>
+                        <application>
+                            <name>PowerDNS</name>
+                        </application>
+                    </applications>
+                    <preprocessing>
+                        <step>
+                            <type>REGEX</type>
+                            <params>deferred-cache-inserts=([0-9]*)
+\1</params>
+                        </step>
+                        <step>
+                            <type>CHANGE_PER_SECOND</type>
+                            <params/>
+                        </step>
+                    </preprocessing>
+                    <master_item>
+                        <key>pdns.get.stats</key>
+                    </master_item>
+                </item>
+                <item>
+                    <name>PowerDNS: Deferred cache lookups</name>
+                    <type>DEPENDENT</type>
+                    <key>pdns.deferred-cache-lookup</key>
+                    <delay>0</delay>
+                    <value_type>FLOAT</value_type>
+                    <description>Number of cache lookups that were deferred because of maintenance per second</description>
+                    <applications>
+                        <application>
+                            <name>PowerDNS</name>
+                        </application>
+                    </applications>
+                    <preprocessing>
+                        <step>
+                            <type>REGEX</type>
+                            <params>deferred-cache-lookup=([0-9]*)
+\1</params>
+                        </step>
+                        <step>
+                            <type>CHANGE_PER_SECOND</type>
+                            <params/>
+                        </step>
+                    </preprocessing>
+                    <master_item>
+                        <key>pdns.get.stats</key>
+                    </master_item>
+                </item>
+                <item>
+                    <name>PowerDNS: Deferred packet cache inserts</name>
+                    <type>DEPENDENT</type>
+                    <key>pdns.deferred-packetcache-inserts</key>
+                    <delay>0</delay>
+                    <value_type>FLOAT</value_type>
+                    <description>Number of packet cache inserts that were deferred because of maintenance per second</description>
+                    <applications>
+                        <application>
+                            <name>PowerDNS</name>
+                        </application>
+                    </applications>
+                    <preprocessing>
+                        <step>
+                            <type>REGEX</type>
+                            <params>deferred-packetcache-inserts=([0-9]*)
+\1</params>
+                        </step>
+                        <step>
+                            <type>CHANGE_PER_SECOND</type>
+                            <params/>
+                        </step>
+                    </preprocessing>
+                    <master_item>
+                        <key>pdns.get.stats</key>
+                    </master_item>
+                </item>
+                <item>
+                    <name>PowerDNS: Deferred packet cache loopkups</name>
+                    <type>DEPENDENT</type>
+                    <key>pdns.deferred-packetcache-lookup</key>
+                    <delay>0</delay>
+                    <value_type>FLOAT</value_type>
+                    <description>Number of packet cache lookups that were deferred because of maintenance per second</description>
+                    <applications>
+                        <application>
+                            <name>PowerDNS</name>
+                        </application>
+                    </applications>
+                    <preprocessing>
+                        <step>
+                            <type>REGEX</type>
+                            <params>deferred-packetcache-lookup=([0-9]*)
+\1</params>
+                        </step>
+                        <step>
+                            <type>CHANGE_PER_SECOND</type>
+                            <params/>
+                        </step>
+                    </preprocessing>
+                    <master_item>
+                        <key>pdns.get.stats</key>
+                    </master_item>
+                </item>
+                <item>
+                    <name>PowerDNS: DNS updates answered</name>
+                    <type>DEPENDENT</type>
+                    <key>pdns.dnsupdate-answers</key>
+                    <delay>0</delay>
+                    <value_type>FLOAT</value_type>
+                    <description>Number of DNS update packets successfully answered per second</description>
+                    <applications>
+                        <application>
+                            <name>PowerDNS</name>
+                        </application>
+                    </applications>
+                    <preprocessing>
+                        <step>
+                            <type>REGEX</type>
+                            <params>dnsupdate-answers=([0-9]*)
+\1</params>
+                        </step>
+                        <step>
+                            <type>CHANGE_PER_SECOND</type>
+                            <params/>
+                        </step>
+                    </preprocessing>
+                    <master_item>
+                        <key>pdns.get.stats</key>
+                    </master_item>
+                </item>
+                <item>
+                    <name>PowerDNS: DNS updates changes</name>
+                    <type>DEPENDENT</type>
+                    <key>pdns.dnsupdate-changes</key>
+                    <delay>0</delay>
+                    <value_type>FLOAT</value_type>
+                    <description>Total number of changes to records from DNS update per second</description>
+                    <applications>
+                        <application>
+                            <name>PowerDNS</name>
+                        </application>
+                    </applications>
+                    <preprocessing>
+                        <step>
+                            <type>REGEX</type>
+                            <params>dnsupdate-changes=([0-9]*)
+\1</params>
+                        </step>
+                        <step>
+                            <type>CHANGE_PER_SECOND</type>
+                            <params/>
+                        </step>
+                    </preprocessing>
+                    <master_item>
+                        <key>pdns.get.stats</key>
+                    </master_item>
+                </item>
+                <item>
+                    <name>PowerDNS: DNS updates queries recieved</name>
+                    <type>DEPENDENT</type>
+                    <key>pdns.dnsupdate-queries</key>
+                    <delay>0</delay>
+                    <value_type>FLOAT</value_type>
+                    <description>Number of DNS update packets received per second</description>
+                    <applications>
+                        <application>
+                            <name>PowerDNS</name>
+                        </application>
+                    </applications>
+                    <preprocessing>
+                        <step>
+                            <type>REGEX</type>
+                            <params>dnsupdate-queries=([0-9]*)
+\1</params>
+                        </step>
+                        <step>
+                            <type>CHANGE_PER_SECOND</type>
+                            <params/>
+                        </step>
+                    </preprocessing>
+                    <master_item>
+                        <key>pdns.get.stats</key>
+                    </master_item>
+                </item>
+                <item>
+                    <name>PowerDNS: DNS updates queries refused</name>
+                    <type>DEPENDENT</type>
+                    <key>pdns.dnsupdate-refused</key>
+                    <delay>0</delay>
+                    <value_type>FLOAT</value_type>
+                    <description>Number of DNS update packets that were refused per second</description>
+                    <applications>
+                        <application>
+                            <name>PowerDNS</name>
+                        </application>
+                    </applications>
+                    <preprocessing>
+                        <step>
+                            <type>REGEX</type>
+                            <params>dnsupdate-refused=([0-9]*)
+\1</params>
+                        </step>
+                        <step>
+                            <type>CHANGE_PER_SECOND</type>
+                            <params/>
+                        </step>
+                    </preprocessing>
+                    <master_item>
+                        <key>pdns.get.stats</key>
+                    </master_item>
+                </item>
+                <item>
+                    <name>PowerDNS: Cached negative queries</name>
+                    <type>DEPENDENT</type>
+                    <key>pdns.get.cache.negative-queries</key>
+                    <delay>0</delay>
+                    <description>Number of cached negative queries</description>
+                    <applications>
+                        <application>
+                            <name>PowerDNS</name>
+                        </application>
+                    </applications>
+                    <preprocessing>
+                        <step>
+                            <type>REGEX</type>
+                            <params>^negative queries:\s?([0-9]*)
+\1</params>
+                        </step>
+                    </preprocessing>
+                    <master_item>
+                        <key>pdns.get.cache.stats</key>
+                    </master_item>
+                </item>
+                <item>
+                    <name>PowerDNS: Cached queries</name>
+                    <type>DEPENDENT</type>
+                    <key>pdns.get.cache.queries</key>
+                    <delay>0</delay>
+                    <description>Number of cached queries</description>
+                    <applications>
+                        <application>
+                            <name>PowerDNS</name>
+                        </application>
+                    </applications>
+                    <preprocessing>
+                        <step>
+                            <type>REGEX</type>
+                            <params>^negative queries:\s?[0-9]*,\s?queries:\s?([0-9]*)
+\1</params>
+                        </step>
+                    </preprocessing>
+                    <master_item>
+                        <key>pdns.get.cache.stats</key>
+                    </master_item>
+                </item>
+                <item>
+                    <name>PowerDNS: Get server cache stats</name>
+                    <key>pdns.get.cache.stats</key>
+                    <history>1h</history>
+                    <trends>0</trends>
+                    <value_type>TEXT</value_type>
+                    <applications>
+                        <application>
+                            <name>Zabbix raw items</name>
+                        </application>
+                    </applications>
+                </item>
+                <item>
+                    <name>PowerDNS: Get server stats</name>
+                    <key>pdns.get.stats</key>
+                    <history>1h</history>
+                    <trends>0</trends>
+                    <value_type>TEXT</value_type>
+                    <applications>
+                        <application>
+                            <name>Zabbix raw items</name>
+                        </application>
+                    </applications>
+                </item>
+                <item>
+                    <name>PowerDNS: Incoming notofications</name>
+                    <type>DEPENDENT</type>
+                    <key>pdns.incoming-notifications</key>
+                    <delay>0</delay>
+                    <value_type>FLOAT</value_type>
+                    <description>Number of NOTIFY packets that were received per second</description>
+                    <applications>
+                        <application>
+                            <name>PowerDNS</name>
+                        </application>
+                    </applications>
+                    <preprocessing>
+                        <step>
+                            <type>REGEX</type>
+                            <params>incoming-notifications=([0-9]*)
+\1</params>
+                        </step>
+                        <step>
+                            <type>CHANGE_PER_SECOND</type>
+                            <params/>
+                        </step>
+                    </preprocessing>
+                    <master_item>
+                        <key>pdns.get.stats</key>
+                    </master_item>
+                </item>
+                <item>
+                    <name>PowerDNS: Key cache size</name>
+                    <type>DEPENDENT</type>
+                    <key>pdns.key-cache-size</key>
+                    <delay>0</delay>
+                    <description>Number of entries in the key cache</description>
+                    <applications>
+                        <application>
+                            <name>PowerDNS</name>
+                        </application>
+                    </applications>
+                    <preprocessing>
+                        <step>
+                            <type>REGEX</type>
+                            <params>key-cache-size=([0-9]*)
+\1</params>
+                        </step>
+                    </preprocessing>
+                    <master_item>
+                        <key>pdns.get.stats</key>
+                    </master_item>
+                </item>
+                <item>
+                    <name>PowerDNS:Latency</name>
+                    <type>DEPENDENT</type>
+                    <key>pdns.latency</key>
+                    <delay>0</delay>
+                    <value_type>FLOAT</value_type>
+                    <units>ms</units>
+                    <description>Average number of microseconds a packet spends within PowerDNS</description>
+                    <applications>
+                        <application>
+                            <name>PowerDNS</name>
+                        </application>
+                    </applications>
+                    <preprocessing>
+                        <step>
+                            <type>REGEX</type>
+                            <params>key-cache-size=([0-9]*)
+\1</params>
+                        </step>
+                    </preprocessing>
+                    <master_item>
+                        <key>pdns.get.stats</key>
+                    </master_item>
+                </item>
+                <item>
+                    <name>PowerDNS: Metadata cache size</name>
+                    <type>DEPENDENT</type>
+                    <key>pdns.meta-cache-size</key>
+                    <delay>0</delay>
+                    <description>Number of entries in the metadata cache</description>
+                    <applications>
+                        <application>
+                            <name>PowerDNS</name>
+                        </application>
+                    </applications>
+                    <preprocessing>
+                        <step>
+                            <type>REGEX</type>
+                            <params>meta-cache-size=([0-9]*)
+\1</params>
+                        </step>
+                    </preprocessing>
+                    <master_item>
+                        <key>pdns.get.stats</key>
+                    </master_item>
+                </item>
+                <item>
+                    <name>PowerDNS: Open TCP connections</name>
+                    <type>DEPENDENT</type>
+                    <key>pdns.open-tcp-connections</key>
+                    <delay>0</delay>
+                    <description>Number of currently open TCP connections</description>
+                    <applications>
+                        <application>
+                            <name>PowerDNS</name>
+                        </application>
+                    </applications>
+                    <preprocessing>
+                        <step>
+                            <type>REGEX</type>
+                            <params>open-tcp-connections=([0-9]*)
+\1</params>
+                        </step>
+                    </preprocessing>
+                    <master_item>
+                        <key>pdns.get.stats</key>
+                    </master_item>
+                </item>
+                <item>
+                    <name>PowerDNS: Dropped packets</name>
+                    <type>DEPENDENT</type>
+                    <key>pdns.overload-drops</key>
+                    <delay>0</delay>
+                    <value_type>FLOAT</value_type>
+                    <description>Number of questions dropped because backends overloaded</description>
+                    <applications>
+                        <application>
+                            <name>PowerDNS</name>
+                        </application>
+                    </applications>
+                    <preprocessing>
+                        <step>
+                            <type>REGEX</type>
+                            <params>overload-drops=([0-9]*)
+\1</params>
+                        </step>
+                        <step>
+                            <type>CHANGE_PER_SECOND</type>
+                            <params/>
+                        </step>
+                    </preprocessing>
+                    <master_item>
+                        <key>pdns.get.stats</key>
+                    </master_item>
+                </item>
+                <item>
+                    <name>PowerDNS: Packetcache hits</name>
+                    <type>DEPENDENT</type>
+                    <key>pdns.packetcache-hit</key>
+                    <delay>0</delay>
+                    <value_type>FLOAT</value_type>
+                    <description>Number of packets which were answered out of the cache per second</description>
+                    <applications>
+                        <application>
+                            <name>PowerDNS</name>
+                        </application>
+                    </applications>
+                    <preprocessing>
+                        <step>
+                            <type>REGEX</type>
+                            <params>packetcache-hit=([0-9]*)
+\1</params>
+                        </step>
+                        <step>
+                            <type>CHANGE_PER_SECOND</type>
+                            <params/>
+                        </step>
+                    </preprocessing>
+                    <master_item>
+                        <key>pdns.get.stats</key>
+                    </master_item>
+                </item>
+                <item>
+                    <name>PowerDNS: Packetcache misses</name>
+                    <type>DEPENDENT</type>
+                    <key>pdns.packetcache-miss</key>
+                    <delay>0</delay>
+                    <value_type>FLOAT</value_type>
+                    <description>Number of times a packet could not be answered out of the cache per second</description>
+                    <applications>
+                        <application>
+                            <name>PowerDNS</name>
+                        </application>
+                    </applications>
+                    <preprocessing>
+                        <step>
+                            <type>REGEX</type>
+                            <params>packetcache-miss=([0-9]*)
+\1</params>
+                        </step>
+                        <step>
+                            <type>CHANGE_PER_SECOND</type>
+                            <params/>
+                        </step>
+                    </preprocessing>
+                    <master_item>
+                        <key>pdns.get.stats</key>
+                    </master_item>
+                </item>
+                <item>
+                    <name>PowerDNS: Packetcache cache size</name>
+                    <type>DEPENDENT</type>
+                    <key>pdns.packetcache-size</key>
+                    <delay>0</delay>
+                    <description>Amount of packets in the packetcache</description>
+                    <applications>
+                        <application>
+                            <name>PowerDNS</name>
+                        </application>
+                    </applications>
+                    <preprocessing>
+                        <step>
+                            <type>REGEX</type>
+                            <params>packetcache-size=([0-9]*)
+\1</params>
+                        </step>
+                    </preprocessing>
+                    <master_item>
+                        <key>pdns.get.stats</key>
+                    </master_item>
+                </item>
+                <item>
+                    <name>PowerDNS: Pdns service ping</name>
+                    <key>pdns.ping</key>
+                    <description>Status for the pdns service via &quot;pdns_control ping&quot;</description>
+                    <applications>
+                        <application>
+                            <name>PowerDNS</name>
+                        </application>
+                    </applications>
+                    <valuemap>
+                        <name>Service state</name>
+                    </valuemap>
+                    <preprocessing>
+                        <step>
+                            <type>REGEX</type>
+                            <params>PONG
+1</params>
+                            <error_handler>CUSTOM_VALUE</error_handler>
+                            <error_handler_params>0</error_handler_params>
+                        </step>
+                    </preprocessing>
+                    <triggers>
+                        <trigger>
+                            <expression>{last(#3)}=0</expression>
+                            <name>PowerDNS: PowerDNS service is not responding</name>
+                            <priority>WARNING</priority>
+                        </trigger>
+                    </triggers>
+                </item>
+                <item>
+                    <name>PowerDNS: Database queue size</name>
+                    <type>DEPENDENT</type>
+                    <key>pdns.qsize-q</key>
+                    <delay>0</delay>
+                    <description>Number of packets waiting for database attention</description>
+                    <applications>
+                        <application>
+                            <name>PowerDNS</name>
+                        </application>
+                    </applications>
+                    <preprocessing>
+                        <step>
+                            <type>REGEX</type>
+                            <params>qsize-q=([0-9]*)
+\1</params>
+                        </step>
+                    </preprocessing>
+                    <master_item>
+                        <key>pdns.get.stats</key>
+                    </master_item>
+                </item>
+                <item>
+                    <name>PowerDNS: Query cache hits</name>
+                    <type>DEPENDENT</type>
+                    <key>pdns.query-cache-hit</key>
+                    <delay>0</delay>
+                    <value_type>FLOAT</value_type>
+                    <description>Number of hits on the Query Cache per second</description>
+                    <applications>
+                        <application>
+                            <name>PowerDNS</name>
+                        </application>
+                    </applications>
+                    <preprocessing>
+                        <step>
+                            <type>REGEX</type>
+                            <params>query-cache-hit=([0-9]*)
+\1</params>
+                        </step>
+                        <step>
+                            <type>CHANGE_PER_SECOND</type>
+                            <params/>
+                        </step>
+                    </preprocessing>
+                    <master_item>
+                        <key>pdns.get.stats</key>
+                    </master_item>
+                </item>
+                <item>
+                    <name>PowerDNS: Query cache misses</name>
+                    <type>DEPENDENT</type>
+                    <key>pdns.query-cache-miss</key>
+                    <delay>0</delay>
+                    <value_type>FLOAT</value_type>
+                    <description>Number of misses on the Query Cache per second</description>
+                    <applications>
+                        <application>
+                            <name>PowerDNS</name>
+                        </application>
+                    </applications>
+                    <preprocessing>
+                        <step>
+                            <type>REGEX</type>
+                            <params>query-cache-miss=([0-9]*)
+\1</params>
+                        </step>
+                        <step>
+                            <type>CHANGE_PER_SECOND</type>
+                            <params/>
+                        </step>
+                    </preprocessing>
+                    <master_item>
+                        <key>pdns.get.stats</key>
+                    </master_item>
+                </item>
+                <item>
+                    <name>PowerDNS: Query cache size</name>
+                    <type>DEPENDENT</type>
+                    <key>pdns.query-cache-size</key>
+                    <delay>0</delay>
+                    <description>Number of entries in the query cache</description>
+                    <applications>
+                        <application>
+                            <name>PowerDNS</name>
+                        </application>
+                    </applications>
+                    <preprocessing>
+                        <step>
+                            <type>REGEX</type>
+                            <params>query-cache-size=([0-9]*)
+\1</params>
+                        </step>
+                    </preprocessing>
+                    <master_item>
+                        <key>pdns.get.stats</key>
+                    </master_item>
+                </item>
+                <item>
+                    <name>PowerDNS: Packets requesting recursion</name>
+                    <type>DEPENDENT</type>
+                    <key>pdns.rd-queries</key>
+                    <delay>0</delay>
+                    <value_type>FLOAT</value_type>
+                    <description>Number of packets sent by clients requesting recursion per second (regardless of if we’ll be providing them with recursion).</description>
+                    <applications>
+                        <application>
+                            <name>PowerDNS</name>
+                        </application>
+                    </applications>
+                    <preprocessing>
+                        <step>
+                            <type>REGEX</type>
+                            <params>rd-queries=([0-9]*)
+\1</params>
+                        </step>
+                        <step>
+                            <type>CHANGE_PER_SECOND</type>
+                            <params/>
+                        </step>
+                    </preprocessing>
+                    <master_item>
+                        <key>pdns.get.stats</key>
+                    </master_item>
+                </item>
+                <item>
+                    <name>PowerDNS: Recursing queries answered</name>
+                    <type>DEPENDENT</type>
+                    <key>pdns.recursing-answers</key>
+                    <delay>0</delay>
+                    <value_type>FLOAT</value_type>
+                    <description>Number of packets we supplied an answer to after recursive processing per second</description>
+                    <applications>
+                        <application>
+                            <name>PowerDNS</name>
+                        </application>
+                    </applications>
+                    <preprocessing>
+                        <step>
+                            <type>REGEX</type>
+                            <params>recursing-answers=([0-9]*)
+\1</params>
+                        </step>
+                        <step>
+                            <type>CHANGE_PER_SECOND</type>
+                            <params/>
+                        </step>
+                    </preprocessing>
+                    <master_item>
+                        <key>pdns.get.stats</key>
+                    </master_item>
+                </item>
+                <item>
+                    <name>PowerDNS: Recursing queries processed</name>
+                    <type>DEPENDENT</type>
+                    <key>pdns.recursing-questions</key>
+                    <delay>0</delay>
+                    <value_type>FLOAT</value_type>
+                    <description>Number of packets we performed recursive processing for per second</description>
+                    <applications>
+                        <application>
+                            <name>PowerDNS</name>
+                        </application>
+                    </applications>
+                    <preprocessing>
+                        <step>
+                            <type>REGEX</type>
+                            <params>recursing-questions=([0-9]*)
+\1</params>
+                        </step>
+                        <step>
+                            <type>CHANGE_PER_SECOND</type>
+                            <params/>
+                        </step>
+                    </preprocessing>
+                    <master_item>
+                        <key>pdns.get.stats</key>
+                    </master_item>
+                </item>
+                <item>
+                    <name>PowerDNS: Recursing queries where recursor timed out</name>
+                    <type>DEPENDENT</type>
+                    <key>pdns.recursion-unanswered</key>
+                    <delay>0</delay>
+                    <value_type>FLOAT</value_type>
+                    <description>Number of packets we sent to our recursor, but did not get a timely answer for per second</description>
+                    <applications>
+                        <application>
+                            <name>PowerDNS</name>
+                        </application>
+                    </applications>
+                    <preprocessing>
+                        <step>
+                            <type>REGEX</type>
+                            <params>recursion-unanswered=([0-9]*)
+\1</params>
+                        </step>
+                        <step>
+                            <type>CHANGE_PER_SECOND</type>
+                            <params/>
+                        </step>
+                    </preprocessing>
+                    <master_item>
+                        <key>pdns.get.stats</key>
+                    </master_item>
+                </item>
+                <item>
+                    <name>PowerDNS: Security status</name>
+                    <type>DEPENDENT</type>
+                    <key>pdns.security-status</key>
+                    <delay>0</delay>
+                    <description>Security status based on Security Polling.&#13;
+Checks if the current version is considered secure by PowerDNS and returns wether updating is recommended (2) or required (3).&#13;
+If Error (0) is recieved the server was not able to resolve the security status for some reason.</description>
+                    <applications>
+                        <application>
+                            <name>PowerDNS</name>
+                        </application>
+                    </applications>
+                    <valuemap>
+                        <name>PowerDNS Security status</name>
+                    </valuemap>
+                    <preprocessing>
+                        <step>
+                            <type>REGEX</type>
+                            <params>security-status=([0-9]*)
+\1</params>
+                        </step>
+                    </preprocessing>
+                    <master_item>
+                        <key>pdns.get.stats</key>
+                    </master_item>
+                    <triggers>
+                        <trigger>
+                            <expression>{last()}=3</expression>
+                            <name>PowerDNS: The current version of PowerDNS is no longer considered secure</name>
+                            <priority>INFO</priority>
+                            <description>The current version of PowerDNS is not considered secure, an upgrade is required.</description>
+                        </trigger>
+                    </triggers>
+                </item>
+                <item>
+                    <name>PowerDNS: Returned servfail</name>
+                    <type>DEPENDENT</type>
+                    <key>pdns.servfail-packets</key>
+                    <delay>0</delay>
+                    <value_type>FLOAT</value_type>
+                    <description>Amount of packets that could not be answered due to database problems per second</description>
+                    <applications>
+                        <application>
+                            <name>PowerDNS</name>
+                        </application>
+                    </applications>
+                    <preprocessing>
+                        <step>
+                            <type>REGEX</type>
+                            <params>servfail-packets=([0-9]*)
+\1</params>
+                        </step>
+                        <step>
+                            <type>CHANGE_PER_SECOND</type>
+                            <params/>
+                        </step>
+                    </preprocessing>
+                    <master_item>
+                        <key>pdns.get.stats</key>
+                    </master_item>
+                </item>
+                <item>
+                    <name>PowerDNS: DNSSEC signature cache size</name>
+                    <type>DEPENDENT</type>
+                    <key>pdns.signature-cache-size</key>
+                    <delay>0</delay>
+                    <description>Number of entries in the signature cache</description>
+                    <applications>
+                        <application>
+                            <name>PowerDNS</name>
+                        </application>
+                    </applications>
+                    <preprocessing>
+                        <step>
+                            <type>REGEX</type>
+                            <params>signature-cache-size=([0-9]*)
+\1</params>
+                        </step>
+                    </preprocessing>
+                    <master_item>
+                        <key>pdns.get.stats</key>
+                    </master_item>
+                </item>
+                <item>
+                    <name>PowerDNS: Number of DNSSEC signatures</name>
+                    <type>DEPENDENT</type>
+                    <key>pdns.signatures</key>
+                    <delay>0</delay>
+                    <description>Number of DNSSEC signatures created</description>
+                    <applications>
+                        <application>
+                            <name>PowerDNS</name>
+                        </application>
+                    </applications>
+                    <preprocessing>
+                        <step>
+                            <type>REGEX</type>
+                            <params>signatures=([0-9]*)
+\1</params>
+                        </step>
+                    </preprocessing>
+                    <master_item>
+                        <key>pdns.get.stats</key>
+                    </master_item>
+                </item>
+                <item>
+                    <name>PowerDNS: Used CPU time in ms (system)</name>
+                    <type>DEPENDENT</type>
+                    <key>pdns.sys-msec</key>
+                    <delay>0</delay>
+                    <value_type>FLOAT</value_type>
+                    <units>ms</units>
+                    <description>Number of CPU milliseconds sent in system time</description>
+                    <applications>
+                        <application>
+                            <name>PowerDNS</name>
+                        </application>
+                    </applications>
+                    <preprocessing>
+                        <step>
+                            <type>REGEX</type>
+                            <params>sys-msec=([0-9]*)
+\1</params>
+                        </step>
+                    </preprocessing>
+                    <master_item>
+                        <key>pdns.get.stats</key>
+                    </master_item>
+                </item>
+                <item>
+                    <name>PowerDNS: Answers sent over TCP</name>
+                    <type>DEPENDENT</type>
+                    <key>pdns.tcp-answers</key>
+                    <delay>0</delay>
+                    <value_type>FLOAT</value_type>
+                    <description>Number of answers sent out over TCP per second</description>
+                    <applications>
+                        <application>
+                            <name>PowerDNS</name>
+                        </application>
+                    </applications>
+                    <preprocessing>
+                        <step>
+                            <type>REGEX</type>
+                            <params>tcp-answers=([0-9]*)
+\1</params>
+                        </step>
+                        <step>
+                            <type>CHANGE_PER_SECOND</type>
+                            <params/>
+                        </step>
+                    </preprocessing>
+                    <master_item>
+                        <key>pdns.get.stats</key>
+                    </master_item>
+                </item>
+                <item>
+                    <name>PowerDNS: Bytes sent over TCP</name>
+                    <type>DEPENDENT</type>
+                    <key>pdns.tcp-answers-bytes</key>
+                    <delay>0</delay>
+                    <value_type>FLOAT</value_type>
+                    <units>Bytes</units>
+                    <description>Total number of answer bytes sent over TCP per second</description>
+                    <applications>
+                        <application>
+                            <name>PowerDNS</name>
+                        </application>
+                    </applications>
+                    <preprocessing>
+                        <step>
+                            <type>REGEX</type>
+                            <params>tcp-answers-bytes=([0-9]*)
+\1</params>
+                        </step>
+                        <step>
+                            <type>CHANGE_PER_SECOND</type>
+                            <params/>
+                        </step>
+                    </preprocessing>
+                    <master_item>
+                        <key>pdns.get.stats</key>
+                    </master_item>
+                </item>
+                <item>
+                    <name>PowerDNS: Queries received over TCP</name>
+                    <type>DEPENDENT</type>
+                    <key>pdns.tcp-queries</key>
+                    <delay>0</delay>
+                    <value_type>FLOAT</value_type>
+                    <description>Number of questions received over TCP per second</description>
+                    <applications>
+                        <application>
+                            <name>PowerDNS</name>
+                        </application>
+                    </applications>
+                    <preprocessing>
+                        <step>
+                            <type>REGEX</type>
+                            <params>tcp-queries=([0-9]*)
+\1</params>
+                        </step>
+                        <step>
+                            <type>CHANGE_PER_SECOND</type>
+                            <params/>
+                        </step>
+                    </preprocessing>
+                    <master_item>
+                        <key>pdns.get.stats</key>
+                    </master_item>
+                </item>
+                <item>
+                    <name>PowerDNS: Answers sent over TCPv4</name>
+                    <type>DEPENDENT</type>
+                    <key>pdns.tcp4-answers</key>
+                    <delay>0</delay>
+                    <value_type>FLOAT</value_type>
+                    <description>Number of answers sent out over TCPv4 per second</description>
+                    <applications>
+                        <application>
+                            <name>PowerDNS</name>
+                        </application>
+                    </applications>
+                    <preprocessing>
+                        <step>
+                            <type>REGEX</type>
+                            <params>tcp4-answers=([0-9]*)
+\1</params>
+                        </step>
+                        <step>
+                            <type>CHANGE_PER_SECOND</type>
+                            <params/>
+                        </step>
+                    </preprocessing>
+                    <master_item>
+                        <key>pdns.get.stats</key>
+                    </master_item>
+                </item>
+                <item>
+                    <name>PowerDNS: Bytes sent over TCPv4</name>
+                    <type>DEPENDENT</type>
+                    <key>pdns.tcp4-answers-bytes</key>
+                    <delay>0</delay>
+                    <value_type>FLOAT</value_type>
+                    <units>Bytes</units>
+                    <description>Total number of answer bytes sent over TCPv4 per second</description>
+                    <applications>
+                        <application>
+                            <name>PowerDNS</name>
+                        </application>
+                    </applications>
+                    <preprocessing>
+                        <step>
+                            <type>REGEX</type>
+                            <params>tcp4-answers-bytes=([0-9]*)
+\1</params>
+                        </step>
+                        <step>
+                            <type>CHANGE_PER_SECOND</type>
+                            <params/>
+                        </step>
+                    </preprocessing>
+                    <master_item>
+                        <key>pdns.get.stats</key>
+                    </master_item>
+                </item>
+                <item>
+                    <name>PowerDNS: Queries received over TCPv4</name>
+                    <type>DEPENDENT</type>
+                    <key>pdns.tcp4-queries</key>
+                    <delay>0</delay>
+                    <value_type>FLOAT</value_type>
+                    <description>Number of questions received over TCPv4 per second</description>
+                    <applications>
+                        <application>
+                            <name>PowerDNS</name>
+                        </application>
+                    </applications>
+                    <preprocessing>
+                        <step>
+                            <type>REGEX</type>
+                            <params>tcp4-queries=([0-9]*)
+\1</params>
+                        </step>
+                        <step>
+                            <type>CHANGE_PER_SECOND</type>
+                            <params/>
+                        </step>
+                    </preprocessing>
+                    <master_item>
+                        <key>pdns.get.stats</key>
+                    </master_item>
+                </item>
+                <item>
+                    <name>PowerDNS: Answers sent over TCPv6</name>
+                    <type>DEPENDENT</type>
+                    <key>pdns.tcp6-answers</key>
+                    <delay>0</delay>
+                    <value_type>FLOAT</value_type>
+                    <description>Number of answers sent out over TCPv6 per second</description>
+                    <applications>
+                        <application>
+                            <name>PowerDNS</name>
+                        </application>
+                    </applications>
+                    <preprocessing>
+                        <step>
+                            <type>REGEX</type>
+                            <params>tcp6-answers=([0-9]*)
+\1</params>
+                        </step>
+                        <step>
+                            <type>CHANGE_PER_SECOND</type>
+                            <params/>
+                        </step>
+                    </preprocessing>
+                    <master_item>
+                        <key>pdns.get.stats</key>
+                    </master_item>
+                </item>
+                <item>
+                    <name>PowerDNS: Bytes sent over TCPv6</name>
+                    <type>DEPENDENT</type>
+                    <key>pdns.tcp6-answers-bytes</key>
+                    <delay>0</delay>
+                    <value_type>FLOAT</value_type>
+                    <units>Bytes</units>
+                    <description>Total number of answer bytes sent over TCPv6 per second</description>
+                    <applications>
+                        <application>
+                            <name>PowerDNS</name>
+                        </application>
+                    </applications>
+                    <preprocessing>
+                        <step>
+                            <type>REGEX</type>
+                            <params>tcp6-answers-bytes=([0-9]*)
+\1</params>
+                        </step>
+                        <step>
+                            <type>CHANGE_PER_SECOND</type>
+                            <params/>
+                        </step>
+                    </preprocessing>
+                    <master_item>
+                        <key>pdns.get.stats</key>
+                    </master_item>
+                </item>
+                <item>
+                    <name>PowerDNS: Queries received over TCPv6</name>
+                    <type>DEPENDENT</type>
+                    <key>pdns.tcp6-queries</key>
+                    <delay>0</delay>
+                    <value_type>FLOAT</value_type>
+                    <description>Number of questions received over TCPv6 per second</description>
+                    <applications>
+                        <application>
+                            <name>PowerDNS</name>
+                        </application>
+                    </applications>
+                    <preprocessing>
+                        <step>
+                            <type>REGEX</type>
+                            <params>tcp6-queries=([0-9]*)
+\1</params>
+                        </step>
+                        <step>
+                            <type>CHANGE_PER_SECOND</type>
+                            <params/>
+                        </step>
+                    </preprocessing>
+                    <master_item>
+                        <key>pdns.get.stats</key>
+                    </master_item>
+                </item>
+                <item>
+                    <name>PowerDNS: Packets dropped due to internal timeout</name>
+                    <type>DEPENDENT</type>
+                    <key>pdns.timedout-packets</key>
+                    <delay>0</delay>
+                    <value_type>FLOAT</value_type>
+                    <description>Amount of packets that were dropped because they had to wait too long internally per second</description>
+                    <applications>
+                        <application>
+                            <name>PowerDNS</name>
+                        </application>
+                    </applications>
+                    <preprocessing>
+                        <step>
+                            <type>REGEX</type>
+                            <params>timedout-packets=([0-9]*)
+\1</params>
+                        </step>
+                        <step>
+                            <type>CHANGE_PER_SECOND</type>
+                            <params/>
+                        </step>
+                    </preprocessing>
+                    <master_item>
+                        <key>pdns.get.stats</key>
+                    </master_item>
+                </item>
+                <item>
+                    <name>PowerDNS: Answers sent over UDP</name>
+                    <type>DEPENDENT</type>
+                    <key>pdns.udp-answers</key>
+                    <delay>0</delay>
+                    <value_type>FLOAT</value_type>
+                    <description>Number of answers sent out over UDP per second</description>
+                    <applications>
+                        <application>
+                            <name>PowerDNS</name>
+                        </application>
+                    </applications>
+                    <preprocessing>
+                        <step>
+                            <type>REGEX</type>
+                            <params>udp-answers=([0-9]*)
+\1</params>
+                        </step>
+                        <step>
+                            <type>CHANGE_PER_SECOND</type>
+                            <params/>
+                        </step>
+                    </preprocessing>
+                    <master_item>
+                        <key>pdns.get.stats</key>
+                    </master_item>
+                </item>
+                <item>
+                    <name>PowerDNS: Bytes sent over UDP</name>
+                    <type>DEPENDENT</type>
+                    <key>pdns.udp-answers-bytes</key>
+                    <delay>0</delay>
+                    <value_type>FLOAT</value_type>
+                    <units>Bytes</units>
+                    <description>Total number of answer bytes sent over UDP per second</description>
+                    <applications>
+                        <application>
+                            <name>PowerDNS</name>
+                        </application>
+                    </applications>
+                    <preprocessing>
+                        <step>
+                            <type>REGEX</type>
+                            <params>udp-answers-bytes=([0-9]*)
+\1</params>
+                        </step>
+                        <step>
+                            <type>CHANGE_PER_SECOND</type>
+                            <params/>
+                        </step>
+                    </preprocessing>
+                    <master_item>
+                        <key>pdns.get.stats</key>
+                    </master_item>
+                </item>
+                <item>
+                    <name>PowerDNS: Queries with DNSSEC OK bit set</name>
+                    <type>DEPENDENT</type>
+                    <key>pdns.udp-do-queries</key>
+                    <delay>0</delay>
+                    <value_type>FLOAT</value_type>
+                    <description>Number of queries received with the DO (DNSSEC OK) bit set per second</description>
+                    <applications>
+                        <application>
+                            <name>PowerDNS</name>
+                        </application>
+                    </applications>
+                    <preprocessing>
+                        <step>
+                            <type>REGEX</type>
+                            <params>udp-do-queries=([0-9]*)
+\1</params>
+                        </step>
+                        <step>
+                            <type>CHANGE_PER_SECOND</type>
+                            <params/>
+                        </step>
+                    </preprocessing>
+                    <master_item>
+                        <key>pdns.get.stats</key>
+                    </master_item>
+                </item>
+                <item>
+                    <name>PowerDNS: UDP packets not processed by OS</name>
+                    <type>DEPENDENT</type>
+                    <key>pdns.udp-in-errors</key>
+                    <delay>0</delay>
+                    <value_type>FLOAT</value_type>
+                    <description>Number of packets, received faster than the OS could process them</description>
+                    <applications>
+                        <application>
+                            <name>PowerDNS</name>
+                        </application>
+                    </applications>
+                    <preprocessing>
+                        <step>
+                            <type>REGEX</type>
+                            <params>udp-in-errors=([0-9]*)
+\1</params>
+                        </step>
+                        <step>
+                            <type>CHANGE_PER_SECOND</type>
+                            <params/>
+                        </step>
+                    </preprocessing>
+                    <master_item>
+                        <key>pdns.get.stats</key>
+                    </master_item>
+                </item>
+                <item>
+                    <name>PowerDNS: UDP packets with recieved ICMP no listening port</name>
+                    <type>DEPENDENT</type>
+                    <key>pdns.udp-noport-errors</key>
+                    <delay>0</delay>
+                    <value_type>FLOAT</value_type>
+                    <description>Number of UDP packets where an ICMP response was received that the remote port was not listening per second</description>
+                    <applications>
+                        <application>
+                            <name>PowerDNS</name>
+                        </application>
+                    </applications>
+                    <preprocessing>
+                        <step>
+                            <type>REGEX</type>
+                            <params>udp-noport-errors=([0-9]*)
+\1</params>
+                        </step>
+                        <step>
+                            <type>CHANGE_PER_SECOND</type>
+                            <params/>
+                        </step>
+                    </preprocessing>
+                    <master_item>
+                        <key>pdns.get.stats</key>
+                    </master_item>
+                </item>
+                <item>
+                    <name>PowerDNS: Queries received over UDP</name>
+                    <type>DEPENDENT</type>
+                    <key>pdns.udp-queries</key>
+                    <delay>0</delay>
+                    <value_type>FLOAT</value_type>
+                    <description>Number of questions received over UDP per second</description>
+                    <applications>
+                        <application>
+                            <name>PowerDNS</name>
+                        </application>
+                    </applications>
+                    <preprocessing>
+                        <step>
+                            <type>REGEX</type>
+                            <params>udp-queries=([0-9]*)
+\1</params>
+                        </step>
+                        <step>
+                            <type>CHANGE_PER_SECOND</type>
+                            <params/>
+                        </step>
+                    </preprocessing>
+                    <master_item>
+                        <key>pdns.get.stats</key>
+                    </master_item>
+                </item>
+                <item>
+                    <name>PowerDNS: UDP recieve buffer errors</name>
+                    <type>DEPENDENT</type>
+                    <key>pdns.udp-recvbuf-errors</key>
+                    <delay>0</delay>
+                    <value_type>FLOAT</value_type>
+                    <description>Number of errors caused in the UDP receive buffer per second</description>
+                    <applications>
+                        <application>
+                            <name>PowerDNS</name>
+                        </application>
+                    </applications>
+                    <preprocessing>
+                        <step>
+                            <type>REGEX</type>
+                            <params>udp-recvbuf-errors=([0-9]*)
+\1</params>
+                        </step>
+                        <step>
+                            <type>CHANGE_PER_SECOND</type>
+                            <params/>
+                        </step>
+                    </preprocessing>
+                    <master_item>
+                        <key>pdns.get.stats</key>
+                    </master_item>
+                </item>
+                <item>
+                    <name>PowerDNS: UDP send buffer errors</name>
+                    <type>DEPENDENT</type>
+                    <key>pdns.udp-sndbuf-errors</key>
+                    <delay>0</delay>
+                    <value_type>FLOAT</value_type>
+                    <description>Number of errors caused in the UDP send buffer per second</description>
+                    <applications>
+                        <application>
+                            <name>PowerDNS</name>
+                        </application>
+                    </applications>
+                    <preprocessing>
+                        <step>
+                            <type>REGEX</type>
+                            <params>udp-sndbuf-errors=([0-9]*)
+\1</params>
+                        </step>
+                        <step>
+                            <type>CHANGE_PER_SECOND</type>
+                            <params/>
+                        </step>
+                    </preprocessing>
+                    <master_item>
+                        <key>pdns.get.stats</key>
+                    </master_item>
+                </item>
+                <item>
+                    <name>PowerDNS: Answers sent over UDPv4</name>
+                    <type>DEPENDENT</type>
+                    <key>pdns.udp4-answers</key>
+                    <delay>0</delay>
+                    <value_type>FLOAT</value_type>
+                    <description>Number of answers sent out over UDPv4 per second</description>
+                    <applications>
+                        <application>
+                            <name>PowerDNS</name>
+                        </application>
+                    </applications>
+                    <preprocessing>
+                        <step>
+                            <type>REGEX</type>
+                            <params>udp4-answers=([0-9]*)
+\1</params>
+                        </step>
+                        <step>
+                            <type>CHANGE_PER_SECOND</type>
+                            <params/>
+                        </step>
+                    </preprocessing>
+                    <master_item>
+                        <key>pdns.get.stats</key>
+                    </master_item>
+                </item>
+                <item>
+                    <name>PowerDNS: Bytes sent over UDPv4</name>
+                    <type>DEPENDENT</type>
+                    <key>pdns.udp4-answers-bytes</key>
+                    <delay>0</delay>
+                    <value_type>FLOAT</value_type>
+                    <units>Bytes</units>
+                    <description>Total number of answer bytes sent over UDPv4 per second</description>
+                    <applications>
+                        <application>
+                            <name>PowerDNS</name>
+                        </application>
+                    </applications>
+                    <preprocessing>
+                        <step>
+                            <type>REGEX</type>
+                            <params>udp4-answers-bytes=([0-9]*)
+\1</params>
+                        </step>
+                        <step>
+                            <type>CHANGE_PER_SECOND</type>
+                            <params/>
+                        </step>
+                    </preprocessing>
+                    <master_item>
+                        <key>pdns.get.stats</key>
+                    </master_item>
+                </item>
+                <item>
+                    <name>PowerDNS: Queries received over UDPv4</name>
+                    <type>DEPENDENT</type>
+                    <key>pdns.udp4-queries</key>
+                    <delay>0</delay>
+                    <value_type>FLOAT</value_type>
+                    <description>Number of questions received over UDPv4 per second</description>
+                    <applications>
+                        <application>
+                            <name>PowerDNS</name>
+                        </application>
+                    </applications>
+                    <preprocessing>
+                        <step>
+                            <type>REGEX</type>
+                            <params>udp4-queries=([0-9]*)
+\1</params>
+                        </step>
+                        <step>
+                            <type>CHANGE_PER_SECOND</type>
+                            <params/>
+                        </step>
+                    </preprocessing>
+                    <master_item>
+                        <key>pdns.get.stats</key>
+                    </master_item>
+                </item>
+                <item>
+                    <name>PowerDNS: Answers sent over UDPv6</name>
+                    <type>DEPENDENT</type>
+                    <key>pdns.udp6-answers</key>
+                    <delay>0</delay>
+                    <value_type>FLOAT</value_type>
+                    <description>Number of answers sent out over UDPv6 per second</description>
+                    <applications>
+                        <application>
+                            <name>PowerDNS</name>
+                        </application>
+                    </applications>
+                    <preprocessing>
+                        <step>
+                            <type>REGEX</type>
+                            <params>udp6-answers=([0-9]*)
+\1</params>
+                        </step>
+                        <step>
+                            <type>CHANGE_PER_SECOND</type>
+                            <params/>
+                        </step>
+                    </preprocessing>
+                    <master_item>
+                        <key>pdns.get.stats</key>
+                    </master_item>
+                </item>
+                <item>
+                    <name>PowerDNS: Bytes sent over UDPv6</name>
+                    <type>DEPENDENT</type>
+                    <key>pdns.udp6-answers-bytes</key>
+                    <delay>0</delay>
+                    <value_type>FLOAT</value_type>
+                    <units>Bytes</units>
+                    <description>Total number of answer bytes sent over UDPv6 per second</description>
+                    <applications>
+                        <application>
+                            <name>PowerDNS</name>
+                        </application>
+                    </applications>
+                    <preprocessing>
+                        <step>
+                            <type>REGEX</type>
+                            <params>udp6-answers-bytes=([0-9]*)
+\1</params>
+                        </step>
+                        <step>
+                            <type>CHANGE_PER_SECOND</type>
+                            <params/>
+                        </step>
+                    </preprocessing>
+                    <master_item>
+                        <key>pdns.get.stats</key>
+                    </master_item>
+                </item>
+                <item>
+                    <name>PowerDNS: Queries received over UDPv6</name>
+                    <type>DEPENDENT</type>
+                    <key>pdns.udp6-queries</key>
+                    <delay>0</delay>
+                    <value_type>FLOAT</value_type>
+                    <description>Number of questions received over UDPv6 per second</description>
+                    <applications>
+                        <application>
+                            <name>PowerDNS</name>
+                        </application>
+                    </applications>
+                    <preprocessing>
+                        <step>
+                            <type>REGEX</type>
+                            <params>udp6-queries=([0-9]*)
+\1</params>
+                        </step>
+                        <step>
+                            <type>CHANGE_PER_SECOND</type>
+                            <params/>
+                        </step>
+                    </preprocessing>
+                    <master_item>
+                        <key>pdns.get.stats</key>
+                    </master_item>
+                </item>
+                <item>
+                    <name>PowerDNS: PowerDNS deamon uptime</name>
+                    <type>DEPENDENT</type>
+                    <key>pdns.uptime</key>
+                    <delay>0</delay>
+                    <units>s</units>
+                    <description>Uptime in seconds of the daemon</description>
+                    <applications>
+                        <application>
+                            <name>PowerDNS</name>
+                        </application>
+                    </applications>
+                    <preprocessing>
+                        <step>
+                            <type>REGEX</type>
+                            <params>uptime=([0-9]*)
+\1</params>
+                        </step>
+                    </preprocessing>
+                    <master_item>
+                        <key>pdns.get.stats</key>
+                    </master_item>
+                    <triggers>
+                        <trigger>
+                            <expression>{last()}&lt;600</expression>
+                            <name>PowerDNS: The PowerDNS deamon was restarted</name>
+                            <priority>INFO</priority>
+                        </trigger>
+                    </triggers>
+                </item>
+                <item>
+                    <name>PowerDNS: Used CPU time in ms (user)</name>
+                    <type>DEPENDENT</type>
+                    <key>pdns.user-msec</key>
+                    <delay>0</delay>
+                    <value_type>FLOAT</value_type>
+                    <units>ms</units>
+                    <description>Number of milliseconds spend in CPU ‘user’ time</description>
+                    <applications>
+                        <application>
+                            <name>PowerDNS</name>
+                        </application>
+                    </applications>
+                    <preprocessing>
+                        <step>
+                            <type>REGEX</type>
+                            <params>user-msec=([0-9]*)
+\1</params>
+                        </step>
+                    </preprocessing>
+                    <master_item>
+                        <key>pdns.get.stats</key>
+                    </master_item>
+                </item>
+                <item>
+                    <name>PowerDNS: Version</name>
+                    <key>pdns.version</key>
+                    <delay>1h</delay>
+                    <trends>0</trends>
+                    <value_type>TEXT</value_type>
+                    <description>Version of the pdns deamon</description>
+                    <applications>
+                        <application>
+                            <name>PowerDNS</name>
+                        </application>
+                    </applications>
+                    <preprocessing>
+                        <step>
+                            <type>NOT_MATCHES_REGEX</type>
+                            <params>Fatal error</params>
+                        </step>
+                        <step>
+                            <type>DISCARD_UNCHANGED_HEARTBEAT</type>
+                            <params>86400</params>
+                        </step>
+                    </preprocessing>
+                </item>
+            </items>
+        </template>
+    </templates>
+    <triggers>
+        <trigger>
+            <expression>{Template App PowerDNS:pdns.overload-drops.min(3m)}&lt;&gt;0 or {Template App PowerDNS:pdns.servfail-packets.min(3m)}&lt;&gt;0 or {Template App PowerDNS:pdns.timedout-packets.min(3m)}&lt;&gt;0</expression>
+            <name>PowerDNS: Queries not resolving due to internal error</name>
+            <priority>WARNING</priority>
+            <description>DNS queries are not answered due to dropped packets or internal server errors</description>
+        </trigger>
+    </triggers>
+    <value_maps>
+        <value_map>
+            <name>PowerDNS Security status</name>
+            <mappings>
+                <mapping>
+                    <value>0</value>
+                    <newvalue>Error</newvalue>
+                </mapping>
+                <mapping>
+                    <value>1</value>
+                    <newvalue>OK</newvalue>
+                </mapping>
+                <mapping>
+                    <value>2</value>
+                    <newvalue>Update recommended</newvalue>
+                </mapping>
+                <mapping>
+                    <value>3</value>
+                    <newvalue>Update required</newvalue>
+                </mapping>
+            </mappings>
+        </value_map>
+        <value_map>
+            <name>Service state</name>
+            <mappings>
+                <mapping>
+                    <value>0</value>
+                    <newvalue>Down</newvalue>
+                </mapping>
+                <mapping>
+                    <value>1</value>
+                    <newvalue>Up</newvalue>
+                </mapping>
+            </mappings>
+        </value_map>
+    </value_maps>
+</zabbix_export>
